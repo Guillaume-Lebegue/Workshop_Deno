@@ -78,3 +78,11 @@ Or other PermissionDenied. Theses error are caused by deno because it is protect
 ## Automated tests
 
 When you are ready to submit your work, just push your work. It will trigger an automated test session. You can see the result of the test in the Action section of github.
+
+## Version
+
+This workshop was made with:
+  - deno 1.6
+  - [ink](https://deno.land/x/ink@1.3/mod.ts) 1.3
+  - [abc](https://deno.land/x/abc@v1.2.3) 1.2.3
+  - [deno_mongo](https://deno.land/x/mongo@v0.21.0) 0.21.0
