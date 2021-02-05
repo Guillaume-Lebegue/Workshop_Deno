@@ -1,4 +1,4 @@
-import { db } from './dataBase.ts';
+import { db } from './database.ts';
 import { Agent, NewAgent, UpdateAgent } from './agent.model.ts';
 
 const agents = db.collection<Agent>('agents');

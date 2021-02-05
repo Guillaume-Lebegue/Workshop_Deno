@@ -1,7 +1,5 @@
-import { Bson } from "https://deno.land/x/mongo@v0.21.0/mod.ts";
-
 export interface Agent {
-    _id: Bson.ObjectId;
+    _id: { $oid: string };
     name?: string;
     code: number;
 };
