@@ -1,6 +1,6 @@
 # Workshop_Deno
 
-In this workshop, we will use Deno as a [REST API](https://www.redhat.com/fr/topics/api/what-is-a-rest-api) to save a TodoList. We will also use MongoDB for the DataBase
+In this workshop, we will use Deno as a [REST API](https://www.redhat.com/fr/topics/api/what-is-a-rest-api) to save a TodoList. We will also use MongoDB for the Database
 
 First part is installing Deno and MongoDB
 
@@ -61,7 +61,7 @@ You can use the `deno --version` to check the deno install
 
 You should now be able to use `mongod --version` which should show you the installed version of MongoDB (It should be 4.4)
 
-You should also be able to use the `mongo` command which open a connection with the DataBase. From here, you could manually update your DataBase.
+You should also be able to use the `mongo` command which open a connection with the Database. From here, you could manually update your Database.
 If you want more infos on manual operation, you can visit [docs.mongodb.com](https://docs.mongodb.com/manual/crud/)
 
 ## Runing Deno file
