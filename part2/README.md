@@ -12,7 +12,7 @@ file to turn in `database.ts`
 
 First part of using database is to connect to it.
 For this part, we ask you to export a `db` object of type `Database`.
-Also, for this project, you need to connect to `mongodb://localhost:27017`. By the way, the guys asked you to use a db named `agent`.
+Also, for this project, you need to connect to `mongodb://127.0.0.1:27017`. By the way, the guys asked you to use a db named `agent` and to use a collection named `agents`.
 
 ## ex02 object
 file to turn in `agent.model.ts`
@@ -37,11 +37,38 @@ You need to make 3 interfaces: `Agent`, `NewAgent` and `UpdateAgent`.
 ## ex03 creating object
 file to turn in `agent.service.ts`
 
+Good job developer.
+Now that you have a model you can start with creating an agent.
+
+For this part, you will need to make an async function named `createAgent` that take one `NewAgent` and return a `Document`.
+In it, you need to insert the new agent in the database and return it's new id.
+
 ## ex04 getting object
 file to turn in `agent.service.ts`
+
+After creating an agent, you will need to fetch it.
+
+So let's make a `getAgents` async function. It can take a `number` and it will return a `Agent[]`.
+If a number is given, it will return each agents who have this number for `code`.
+Else, it will return all agents.
 
 ## ex05 updating object
 file to turn in `agent.service.ts`
 
+Now let's make a function to update our agents.
+
+Let's call this async function `updateAgent`. It will take a `string` and a `UpdateAgent` and return a `boolean`.
+The `string` is the agent's `_id`, `updateAgent` is the field to update.
+It will return `true` if something was modified else, it will return `false`.
+
+> Also you will surely need to instantiate a new `ObjectId` from the agent's id
+<!--Warning need upgrade-->
+
 ## ex06 deleting object
 file to turn in `agent.service.ts`
+
+Finaly let's make it so we can remove agents who have retired.
+
+Name this async funtion `deleteAgent`. It will take a `string` and return a `boolean`.
+The `string` is the agent's `_id`.
+It will return `true` if something was deleted. Else, it will return `false`.
