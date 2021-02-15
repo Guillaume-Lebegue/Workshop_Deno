@@ -1,4 +1,4 @@
-import { db } from './database.ts';
+import { db, ObjectId } from './dataBase.ts';
 import { Agent, NewAgent, UpdateAgent } from './agent.model.ts';
 
 const agents = db.collection<Agent>('agents');
@@ -16,19 +16,21 @@ export async function getAgents(code?: number) {
 }
 
 export async function updateAgent(agentId: string, toUpdate: UpdateAgent) {
-    const { modifiedCount } = await agents.updateOne(
-        {_id: agentId},
-        toUpdate
+    let id: ObjectId = new ObjectId(agentId);
+    const results = await agents.updateOne(
+        {_id: id},
+        {$set: toUpdate}
     );
 
-    if (modifiedCount != 0)
+    if (results.modifiedCount != 0)
         return true;
     else
         return false;
 }
 
 export async function deleteAgent(agentId: string) {
-    const deleteCount = await agents.deleteOne({_id: agentId});
+    let id: ObjectId = new ObjectId(agentId);
+    const deleteCount = await agents.deleteOne({_id: id});
 
     if (deleteCount != 0)
         return true;
