@@ -62,7 +62,16 @@ The `string` is the agent's `_id`, `updateAgent` is the field to update.
 It will return `true` if something was modified else, it will return `false`.
 
 > Also you will surely need to instantiate a new `ObjectId` from the agent's id
-<!--Warning need upgrade-->
+```
+import { ObjectId } from "https://deno.land/x/mongo@v0.21.2/bson/mod.ts";
+import {db} from './dataBase.ts';
+
+const sheeps = db.collection<Sheep>('sheeps);
+const stringId = "602aa2bddf8fe3c47519c1b1";
+const id = new ObjectId(stringId);
+
+const sheep = await sheeps.find({_id: id}).toArray();
+```
 
 ## ex06 deleting object
 file to turn in `agent.service.ts`
